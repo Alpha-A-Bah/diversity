@@ -4,13 +4,11 @@ from .forms import DiversityForm, ModuleForm
 from django.views import generic
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import redirect, get_object_or_404
-from studentaccount.mixins import AdmissionsTeamRequiredMixin, WebsiteAdminRequiredMixin
+from studentaccount.mixins import AdmissionsTeamRequiredMixin
 from django.urls import reverse, reverse_lazy
 
 
-
-
-class DashboardView(LoginRequiredMixin,generic.ListView):
+class DashboardView(LoginRequiredMixin, generic.ListView):
     model = Module
     template_name = 'index.html'
     context_object_name = 'modules'

@@ -1,10 +1,8 @@
 from django.db import models
-from django.contrib.auth.models import PermissionsMixin, AbstractUser
 from base.manager import UserManager
 from django.contrib.auth import get_user_model
 
 User = get_user_model()
-
 
 class AllUsers(models.Model):
     STUDENT = 'student'
